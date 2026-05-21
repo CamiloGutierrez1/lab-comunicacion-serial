@@ -18,9 +18,9 @@ jobs:
       matrix:
         include:
           - sketch: parte1/terminal_cli/terminal_cli.ino
-            libraries: ""
+            libraries: "Servo"
           - sketch: parte2/terminal/terminal.ino
-            libraries: ""
+            libraries: "Servo"
           - sketch: parte2/hmi/hmi.ino
             libraries: "Keypad LiquidCrystal"
 
@@ -37,7 +37,6 @@ jobs:
           arduino-cli core install arduino:avr
 
       - name: Instalar librerias necesarias
-        if: matrix.libraries != ''
         run: |
           for lib in ${{ matrix.libraries }}; do
             arduino-cli lib install "$lib"
