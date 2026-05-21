@@ -36,6 +36,8 @@ lab-comunicacion-serial/
 
 ## Parte I — Terminal CLI Interactiva
 
+**Simulacion Tinkercad:** https://www.tinkercad.com/things/g74mvMYleHn-incredible-allis/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=VnFO2N1BSzmU1Nnm8N9X8Z8oMjiZI-ZkyWMpuKhRFq0
+
 ### Componentes
 - Arduino Uno R3
 - Micro Servo (pin 9)
@@ -59,6 +61,8 @@ Para detener el comando `sensor` escribir `q` y presionar Enter.
 ---
 
 ## Parte II — HMI con Teclado y LCD
+
+**Simulacion Tinkercad:** https://www.tinkercad.com/things/iRZ0GTj8bti/editel?returnTo=%2Fdashboard&sharecode=Sv-C9tNe6x_oZTMbKVGyDEd3JaCZ-UyHFLYh2C28Suw
 
 ### Componentes
 **Arduino Terminal (arriba)**
@@ -96,8 +100,6 @@ Para detener el comando `sensor` escribir `q` y presionar Enter.
 ## Parte III — Factibilidad a 20 metros
 
 Investigacion sobre la viabilidad de la comunicacion serial a 20 metros con cable AWG 24. Ver documento adjunto en el repositorio.
-
-**Conclusion:** La comunicacion TTL directa no es factible a 20 metros. Se requiere el estandar **RS-485** con modulos MAX485.
 
 ---
 
