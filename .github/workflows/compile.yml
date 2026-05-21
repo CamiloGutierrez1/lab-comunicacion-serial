@@ -1,0 +1,50 @@
+name: Compilar Sketches Arduino
+
+on:
+  push:
+    paths:
+      - '**.ino'
+  pull_request:
+    paths:
+      - '**.ino'
+
+jobs:
+  compile:
+    name: Compilar ${{ matrix.sketch }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - sketch: parte1/terminal_cli/terminal_cli.ino
+            libraries: ""
+          - sketch: parte2/terminal/terminal.ino
+            libraries: ""
+          - sketch: parte2/hmi/hmi.ino
+            libraries: "Keypad LiquidCrystal"
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Arduino CLI
+        uses: arduino/setup-arduino-cli@v1
+
+      - name: Inicializar Arduino CLI y agregar plataforma AVR
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr
+
+      - name: Instalar librerias necesarias
+        if: matrix.libraries != ''
+        run: |
+          for lib in ${{ matrix.libraries }}; do
+            arduino-cli lib install "$lib"
+          done
+
+      - name: Compilar sketch
+        run: |
+          arduino-cli compile \
+            --fqbn arduino:avr:uno \
+            ${{ matrix.sketch }}
