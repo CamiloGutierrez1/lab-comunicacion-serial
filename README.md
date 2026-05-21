@@ -1,6 +1,6 @@
 # Laboratorio Comunicacion Serial
 
-[![Compilar Sketches Arduino](https://github.com/CamiloGutierrez1/lab-comunicacion-serial/actions/workflows/compile.yml/badge.svg)](https://github.com/CamiloGutierrez1/lab-comunicacion-serial/actions/workflows/compile.yml)
+[![Compilar Sketches Arduino](https://github.com/CamiloGutierrez1/lab-comunicacion-serial/actions/workflows/compile.yml/badge.svg?branch=main)](https://github.com/CamiloGutierrez1/lab-comunicacion-serial/actions/workflows/compile.yml)
 
 Laboratorio de comunicacion serial con Arduino Uno. Implementacion de terminal CLI interactiva e interfaz HMI con teclado matricial y LCD.
 
